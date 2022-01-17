@@ -3,6 +3,5 @@
 
 ## Requirements
 Python 3.7
-
 NLTK
 JSON
