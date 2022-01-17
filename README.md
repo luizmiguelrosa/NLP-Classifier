@@ -4,8 +4,11 @@ A simple text classifier that uses similarities between the text and the databas
 ### Requirements:
 Python 3.7 - NLTK - JSON
 
-### Database
+### Database:
 ```json
+base.json
+
+
 {
     "wikipedia": [
         [
