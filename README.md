@@ -4,6 +4,14 @@ A simple text classifier that uses similarities between the text and the databas
 ### Requirements:
 Python 3.7 - NLTK - JSON
 
+### How to use:
+```python
+# First, open the database
+with open("base.json", "r", encoding="utf8") as f:
+    patterns = json.load(f)
+```
+
+
 ### Database:
 ```json
 base.json
