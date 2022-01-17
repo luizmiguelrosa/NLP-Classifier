@@ -6,9 +6,19 @@ Python 3.7 - NLTK - JSON
 
 ### How to use:
 ```python
-# First, open the database
+# First, import the labries
+import json, import simpleclassifier
+```
+
+
+```python
+# Second, open the database
 with open("base.json", "r", encoding="utf8") as f:
     patterns = json.load(f)
+```
+
+```python
+
 ```
 
 
