@@ -30,11 +30,11 @@ output = classifier.predict(patterns, input_process)
 ```
 
 
-### Database:
+### Create Database:
+```bash
+python trainer.py
+```
 ```json
-base.json
-
-
 {
     "wikipedia": [
         [
