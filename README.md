@@ -1,4 +1,4 @@
-# NLP Classifier
+<h1>NLP Classifier</h1>
 A simple text classifier that uses similarities between the text and the database to tell which entity is responsible.
 
 ### Requirements:
