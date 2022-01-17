@@ -18,7 +18,15 @@ with open("base.json", "r", encoding="utf8") as f:
 ```
 
 ```python
+# Third, process your input
+input_process = simpleclassifier.processText(str(input("Input > ")))
+```
 
+```python
+# Fourth, create the classifier and predict output
+classifier = simpleclassifier.Classifier()
+
+output = classifier.predict(patterns, input_process)
 ```
 
 
