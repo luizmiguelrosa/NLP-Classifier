@@ -2,7 +2,7 @@
  A simple NLP Classifier
 
 ## Requirements
-    Python 3.7
-    
-    NLTK
-    JSON
+Python 3.7
+
+NLTK
+JSON
