@@ -12,6 +12,6 @@ if __name__ == "__main__":
         if not action in patterns:
             patterns[action] = []
         
-        patterns[action].append(input_process)
+        patterns[action].append(list(input_process))
     with open("base.json", "w", encoding="utf8") as f:
         json.dump(patterns, f, ensure_ascii=False)
