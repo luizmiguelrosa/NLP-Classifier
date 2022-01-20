@@ -1,6 +1,8 @@
 <h1 align="center">NLP Classifier</h1>
 A simple text classifier that uses similarities between the text and the database to tell which entity is responsible.
 
+The classifier documentation: [Documentation](https://github.com/Masso13/NLP-Classifier/wiki)
+
 ### Requirements:
 Python 3.7 - NLTK
 ```bash
