@@ -3,6 +3,9 @@ A simple text classifier that uses similarities between the text and the databas
 
 The classifier documentation: [Documentation](https://github.com/Masso13/NLP-Classifier/wiki)
 
+### Video:
+<a href="https://youtu.be/UQf05o1ontE"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a>
+
 ### Requirements:
 * [Python 3.7.2](https://www.python.org/downloads/release/python-372/)
 * [NLTK](https://pypi.org/project/nltk/)
