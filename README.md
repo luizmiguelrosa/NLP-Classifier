@@ -37,13 +37,6 @@ classifier = simpleclassifier.Classifier()
 
 output = classifier.predict(patterns, input_process)
 ```
-In line 5 of the simpleclassifier, it has 
-```python
-stopwords = set(stopwords.words("portuguese") + list(punctuation))
-```
-
-Where is "portuguese", put your language to work perfectly.
-Consult the NLTK documentation to know which parameter to put.
 
 ### Create Database:
 ```bash
