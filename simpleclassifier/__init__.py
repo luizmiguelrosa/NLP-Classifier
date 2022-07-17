@@ -1,17 +1,5 @@
-from nltk.tokenize import word_tokenize
-from string import punctuation
 import json
-
-def processText(text:str):
-    """Process the text by removing punctuation.
-
-    Args:
-        text (str): User input text.
-
-    Returns:
-        [set]: Returns a set with the processed text.
-    """
-    return {word for word in word_tokenize(text.lower()) if not word in punctuation}
+from utils import *
 
 class Classifier:
     def __init__(self, acceptable:int = 50):
@@ -21,8 +9,7 @@ class Classifier:
             acceptable (int, optional): Acceptable percentage of similarity.
         """
         self.acceptable = acceptable
-        self.process_similaty = lambda input, pattern: (len(input.intersection(pattern)) * 100) // len(pattern)
-        self.similaties = {}
+        self.similarities = []
     
     def predict(self, patterns:dict, input:set):
         """Process patterns and check input similarities.
@@ -35,25 +22,29 @@ class Classifier:
             Boolean/Tuple: Returns a tuple with the probable answer and similarity.
         """
 
+        # -=-=-=-=-=-=-=-==-== Filtering -==-=-=-=-=-=-=-=-==-=-=-==-
         for action in patterns:
+            self.similarities.append((action, 0))
+            i = len(self.similarities)-1
             for pattern in patterns[action]:
-                similaty = self.process_similaty(input, pattern)
-                if similaty >= self.acceptable:
-                    self.similaties[action] = similaty
-                if 100 >= similaty >= self.acceptable + 10:
+                similarity = process_similarity(input, pattern)
+                if similarity >= self.acceptable and similarity > self.similarities[i][1]:
+                    self.similarities[i] = (action, similarity)
+                elif similarity == 1.0:
                     break
-        
+            if not self.similarities[i][1]:
+                self.similarities.pop(i)
+
+        # -=-=-=-==-==-=-=-=-=-=- Predict =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         probably = False
-        if len(self.similaties) > 1:
-            for action in self.similaties:
-                if not probably:
+        if len(self.similarities) > 1:
+            for i, action in enumerate(self.similarities):
+                if not probably or self.similarities[i][1] > probably[1]:
                     probably = action
-                elif self.similaties[action] > self.similaties[probably]:
-                    probably = action
-        elif len(self.similaties) == 1:
-            for action in self.similaties:
-                probably = action
-        return False if not probably else (probably, self.similaties[probably])
+        elif len(self.similarities) == 1:
+            probably = self.similarities[0]
+
+        return probably
 
 class Trainer:
     def __init__(self):

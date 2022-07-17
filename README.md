@@ -8,7 +8,7 @@ The classifier documentation: [Documentation](https://github.com/Masso13/NLP-Cla
 
 ### Requirements:
 * [Python 3.7.2](https://www.python.org/downloads/release/python-372/)
-* [NLTK](https://pypi.org/project/nltk/)
+
 ```bash
 pip install nltk==3.6.2
 ```
