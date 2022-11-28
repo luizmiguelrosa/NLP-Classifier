@@ -9,10 +9,6 @@ The classifier documentation: [Documentation](https://github.com/Masso13/NLP-Cla
 ### Requirements:
 * [Python 3.7.2](https://www.python.org/downloads/release/python-372/)
 
-```bash
-pip install nltk==3.6.2
-```
-
 ### How to use:
 ```python
 # First, import the labries
