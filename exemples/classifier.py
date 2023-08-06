@@ -1,6 +1,6 @@
-from simpleclassifier import Classifier, readModel, processText
+from simpleclassifier import Classifier, processText, Model
 
-model = readModel("model.pkl")
+model = Model.read("model.pkl")
 classifier = Classifier(model)
 
 input = processText("Quem foi Santos Dummont")

@@ -1,7 +1,7 @@
-from simpleclassifier import Trainner
+from simpleclassifier import Trainer
 
-trainner = Trainner()
+trainer = Trainer()
 
-trainner.readPatterns("patterns.txt")
-print(trainner.model.patterns)
-trainner.saveModel()
+patterns = trainer.readPatterns("patterns.txt")
+trainer.train(patterns)
+print(trainer.model.patterns)
